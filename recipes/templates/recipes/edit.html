@@ -1,13 +1,12 @@
+{% extends "base.html" %}
+
 {% load static %}
-<!doctype html>
-<html lang="en">
-    <head>
-        <title>
-          {{ recipe_object.title }} -
-          Jason's Recipes</title>
-        <link rel="stylesheet" href="{% static 'css/recipes.css' %}">
-    </head>
-    <body>
+
+{% block title %}
+  {{ recipe_object.title }} Jason's recipes
+{% endblock title %}
+
+{% block content %}
         <header>
             <nav>
               <a href="{% url 'recipe_list' %}">Main page</a>
@@ -22,6 +21,4 @@
           <button type="submit">Edit</button>
           </form>
         </main>
-        <footer>Made with love by Jason's Recipes</footer>
-      </body>
-</html>
+{% endblock content %}
