@@ -1,0 +1,27 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>
+          {{ recipe_object.title }} -
+          Jason's Recipes</title>
+        <link rel="stylesheet" href="{% static 'css/recipes.css' %}">
+    </head>
+    <body>
+        <header>
+            <nav>
+              <a href="{% url 'recipe_list' %}">Main page</a>
+            </nav>
+        </header>
+        <main>
+          <form method="post">
+          {% csrf_token %}
+          {{ recipe_form.as_p }}
+          <label for="recipe-rating">Recipe Rating:</label>
+          <input type="number" id="recipe-rating" name="recipe-rating" min=".5" max="5.0" step=".5">
+          <button type="submit">Edit</button>
+          </form>
+        </main>
+        <footer>Made with love by Jason's Recipes</footer>
+      </body>
+</html>

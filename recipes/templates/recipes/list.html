@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}
+  Jason's recipes
+{% endblock title %}
+
+{% block content %}
+<header>
+  <nav>
+{% if user.is_authenticated %}
+  <p>  Hello, {{ user.username|title }} </p>
+  <a href="{% url 'create_recipe' %}">Create a recipe</a>
+  <a href="{% url 'user_logout' %}">User Logout</a>
+  <a href="{% url 'my_recipe_list' %}">My recipes</a>
+  <a href="{% url 'chat_page' %}">Chat</a>
+{% else %}
+  <a href="{% url 'signup' %}">Sign up</a>
+  <a href="{% url 'user_login' %}">Login</a>
+{% endif %}
+  </nav>
+</header>
+<main>
+  <div class= "content">
+  <h1>Jason's Recipes</h1>
+  <h2>All the food that's fit to devour</h2>
+  <div class="recipe-grid">
+    {% for recipe in recipe_list %}
+    <div>
+      <h3>
+        <a href="{% url 'show_recipe' recipe.id %}">{{ recipe.title }}</a>
+      </h3>
+      <p>created:{{ recipe.created_on|date:"j/F/Y" }}</p>
+      <img src="{{ recipe.picture|default:"https://via.placeholder.com/150" }}">
+      <div> {{ recipe.ratings }} stars
+      </div>
+    </div>
+    {% empty %}
+      <p>There are no recipes.</p>
+    {% endfor %}
+    </div>
+  </div>
+</main>
+{% endblock content %}

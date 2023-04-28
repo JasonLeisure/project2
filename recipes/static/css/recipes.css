@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+.recipe-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 1.75rem;
+  width: min(90%, 68.5rem);
+  margin-inline: auto;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Roboto;
+    background-color: #F3EDDE;
+  }
+
+main {
+    padding: 16px;
+  }
+
+footer {
+    width: 100%;
+    padding: 16px;
+    border-top: 2px solid black;
+    background-color: lightgreen
+  }
+
+  img {
+    height: 160px;
+  }
+
+  nav {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: .1em;
+    border-bottom: 2px solid black;
+    background-color:black;
+  }
+
+  nav > a {
+    color: white;
+    text-decoration: none;
+    background-color:red;
+  }
+
+  nav > p {
+    color: white;
+    margin: 0;
+    text-decoration: none;
+    background-color:red;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  a:hover {
+    color:green;
+  }
+
+  h1 {
+    color: #FFC433;
+  }
+
+  h3 > a {
+    color: green;
+    text-decoration: none;
+  }
+
+  .light-grey tr:nth-child(even) {
+      background-color: lightgrey;
+  }
+
+  table tbody tr:nth-child(even) {
+    background-color: lightgrey;
+  }
+
+
+  .chat_box {
+    z-index: 1000;
+    position: absolute
+  }
+
+  .wrapper {
+    min-height: 100%;
+    display: grid;
+    grid-template-rows: 1fr auto;
+}

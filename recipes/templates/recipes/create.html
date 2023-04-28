@@ -1,0 +1,25 @@
+{% load static %}
+<!doctype html>
+<html>
+    <head>
+        <title>
+          {{ recipe_object.title }} -
+          Jason's Recipes
+        </title>
+        <link rel="stylesheet" href={% static "css/recipes.css" %}>
+    </head>
+     <body>
+        <header>
+            <nav>
+              <a href="{% url 'recipe_list' %}">Main page</a>
+            </nav>
+        </header>
+        <main>
+          <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button>Create</button>
+          </form>
+        </main>
+      </body>
+</html>
