@@ -39,6 +39,7 @@ def create_recipe(request):
             recipe = form.save(False)
             recipe.author = request.user
             recipe.save()
+            Recipe.objects.filter(title = form.cleaned_data["title"]).update(ratings=request.POST.get("recipe-rating"))
             return redirect("recipe_list")
     else:
         form = RecipeForm()
