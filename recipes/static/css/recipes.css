@@ -59,12 +59,13 @@ footer {
     color:green;
   }
 
+
   h1 {
     color: #FFC433;
   }
 
   h3 > a {
-    color: green;
+    color: #800074;
     text-decoration: none;
   }
 
